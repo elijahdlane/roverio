@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>RoverIO</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="">
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="css/superfish.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<script src="./node_modules/angular/angular.min.js"></script>
+
+
+</head>
+
+<body>
+	<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+			<div id="fh5co-header">
+				<header id="fh5co-header-section">
+					<div class="container">
+						<div class="nav-header">
+							<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+							<h1 id="fh5co-logo"><a href="index.html">RoverIO</a></h1>
+							<!-- Nav -->
+							<nav id="fh5co-menu-wrap" role="navigation">
+								<ul class="sf-menu" id="fh5co-primary-menu">
+									<li class="active">
+										<a href="index.html">Home</a>
+									</li>
+									<li><a href="#date_anchor">Date Entry</a></li>
+									<li><a href="#share_anchor">Share</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</header>
+			</div>
+
+
+			<div class="fh5co-hero">
+				<div class="fh5co-overlay"></div>
+				<div class="fh5co-cover text-center">
+					<div class="desc animate-box">
+						<h2>Images of Mars</h2>
+						<span>Interactively gather photos from NASA's Mars rovers.</span>
+						<span><a class="btn btn-danger" href="#date_anchor">Get Started</a></span>
+					</div>
+				</div>
+
+			</div>
+
+<!-- Photos -->
+<a name="photos_anchor"></a>
+			<div id="fh5co-work-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 animate-box">
+							<h3 class="heading-section">Photos</h3>
+						</div>
+						<div class="col-md-12">
+							<div class="row">
+								<img id="returnedPhotos" class="col-md-6 img-fluid" ng-src={{roverdata.photos[0].img_src}} />
+								<img id="returnedPhotos" class="cold-md-6 img-fluid" ng-src={{roverdata.photos[1].img_src}} />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<a name="date_anchor"></a>
+			<div id="fh5co-work-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 animate-box">
+							<h3 class="heading-section">Date Entry</h3>
+						</div>
+						<div class="col-md-12">
+							<div class="row">
+
+								<form>
+									<fieldset>
+										<br>
+										<div>
+											<div class="col-md-4">
+												<label for="year">Year</label>
+												<select id="year" ng-model="year" class="form-control">
+                    								<option>2012</option>
+                    								<option>2013</option>
+                 								    <option>2014</option>
+                    								<option>2015</option>
+                   									<option>2016</option>
+               									 </select>
+											</div>
+
+											<div class="col-md-4">
+												<label for="month">Month</label>
+												<select id="month" ng-model="month" class="form-control">
+                   									 <option>01</option>
+                    								 <option>02</option>
+                    							     <option>03</option>
+                   									 <option>04</option>
+                  								     <option>05</option>
+                    								 <option>06</option>
+                   									 <option>07</option>
+                   									 <option>08</option>
+                  									 <option>09</option>
+                    								 <option>10</option>
+                    								 <option>11</option>
+                    								 <option>12</option>
+                								</select>
+											</div>
+											<div class="col-md-4">
+												<label for="day">Day</label>
+												<input id="day" type="text" placeholder="DD" ng-model="day" class="form-control" required>
+											</div>
+
+
+											<div class="col-md-6">
+												<label for="rover">Rover</label>
+												<select id="rover" ng-model="rover" class="form-control">
+                    								<option>Spirit</option>
+                    								<option>Curiosity</option>
+                    								<option>Oppurtunity</option>
+                								</select>
+											</div>
+
+											<div class="col-md-6">
+												<label for="camera">Camera</label>
+												<select id="camera" ng-model="camera" class="form-control">
+                    								<option>FHAZ</option>
+                    								<option>RHAZ</option>
+                    								<option>MAST</option>
+                    								<option>CHEMCAM</option>
+                    								<option>NAVCAM</option>
+                								</select>
+											</div>
+										</div>
+
+										<center>
+											<button type="button" style="margin-top: 15px;" ng-click="submit()" class="btn btn-danger btn-lg flex-item">Submit</button></center>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Share -->
+			<a name="share_anchor"></a>
+			<div id="fh5co-blog-section" class="border-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 animate-box">
+							<h3 class="heading-section">Share</h3>
+							<p>Spread the word. </p>
+						</div>
+						<div class="col-md-9 col-sm-12">
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<div class="services animate-box">
+										<span><i class="glyphicon glyphicon-screenshot" style="color: white;"></i></span>
+										<h3 style="color: white;">Choose a rover.</h3>
+										<p>NASA currently has three rovers on Mars. The Curiosity Rover, the Oppurtunity Rover, and the Spirit Rover.</p>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="services animate-box">
+										<span><i class="glyphicon glyphicon-calendar" style="color: white;"></i></span>
+										<h3 style="color: white;">Enter a date.</h3>
+										<p>Choose a date you would like to retrieve photos from.</p>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="services animate-box">
+										<span><i class="glyphicon glyphicon-sunglasses" style="color: white;"></i></span>
+										<h3 style="color: white;">Show your friends.</h3>
+										<p>Show your friends the aliens you find while retrieving photos.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer>
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+
+							</div>
+							<div class="col-md-6">
+								<ul class="footer-menu">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="#date_achor">Date Entry</a></li>
+									<li><a href="#share_anchor">Share</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+
+	<!-- jQuery -->
+
+
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Superfish -->
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.js"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+
+
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/tether.min.js"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript" src="server.js"></script>
+
+
+
+
+</body>
+</html>
