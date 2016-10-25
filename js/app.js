@@ -17,7 +17,7 @@ app.controller('roverController', function ($scope, $http) {
             
              $scope.showThis = true;
 =======
-            $scope.showThis = true;
+            
 
 >>>>>>> 9851926d9c452bd5d9858bb3945521bf233876b9
         });
