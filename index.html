@@ -43,6 +43,8 @@
 	<link rel="stylesheet" href="css/style.css">
 
 
+
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -81,7 +83,16 @@
 
 
 			<div class="fh5co-hero">
-				<div class="fh5co-overlay"></div>
+
+				<div class="fh5co-overlay">
+					<div id="container">
+						<canvas id="myCanvas" height="500" width: "500">
+
+						</canvas>
+					</div>
+
+				</div>
+
 				<div class="fh5co-cover text-center">
 					<div class="desc animate-box">
 						<h2>Views from Mars</h2>
@@ -92,13 +103,13 @@
 
 			</div>
 
-<!-- Photos -->
-<a name="photos_anchor"></a>
-<<<<<<< HEAD
-			<div id="fh5co-work-section" ng-show="showThis" >
-=======
-			
->>>>>>> 9851926d9c452bd5d9858bb3945521bf233876b9
+
+
+
+			<!-- Photos -->
+			<a name="photos_anchor"></a>
+			<div id="fh5co-work-section" ng-show="showThis">
+
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 animate-box">
@@ -107,7 +118,7 @@
 						<div class="col-md-12">
 							<div class="row">
 								<img id="returnedPhotos" class="col-md-6" ng-src={{roverdata.photos[0].img_src}} />
-								<img id="returnedPhotos" class="cold-md-6" ng-src={{roverdata.photos[1].img_src}} />		
+								<img id="returnedPhotos" class="cold-md-6" ng-src={{roverdata.photos[1].img_src}} />
 							</div>
 						</div>
 					</div>
@@ -264,6 +275,8 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stars.js -->
+	<script src="js/stars.js"><script>
 	<!-- Superfish -->
 	<script src="js/hoverIntent.js"></script>
 	<script src="js/superfish.js"></script>
@@ -283,5 +296,9 @@
 
 
 
+
+
+
 </body>
+
 </html>
