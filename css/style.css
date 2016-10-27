@@ -821,6 +821,14 @@ h3.heading-section:before {
   background: #D9534F;
   padding: 5em 0;
 }
+
+#fh5co-blog-section-blue, #fh5co-start-project-section {
+  background: #222831;
+  padding: 5em 0;
+}
+
+
+
 #fh5co-blog-section h3.heading-section, #fh5co-start-project-section h3.heading-section {
   color: #fff;
 }
@@ -1236,6 +1244,10 @@ h3.heading-section:before {
 }
 
 #returnedPhotos {
-  max-width: 500px;
+  max-height: 500px;
 
+}
+
+.table-text {
+  color: #FFFFFF;
 }
