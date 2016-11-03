@@ -43,6 +43,8 @@
 	<link rel="stylesheet" href="css/style.css">
 
 
+
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -71,6 +73,7 @@
 										<a href="index.html">Home</a>
 									</li>
 									<li><a href="#date_anchor">Date Entry</a></li>
+									<li><a href="#info_anchor">Availability</a></li>
 									<li><a href="#share_anchor">Share</a></li>
 								</ul>
 							</nav>
@@ -81,7 +84,16 @@
 
 
 			<div class="fh5co-hero">
-				<div class="fh5co-overlay"></div>
+
+				<div class="fh5co-overlay">
+					<div id="container">
+						<canvas id="myCanvas" height="500" width: "500">
+
+						</canvas>
+					</div>
+
+				</div>
+
 				<div class="fh5co-cover text-center">
 					<div class="desc animate-box">
 						<h2>Views from Mars</h2>
@@ -92,9 +104,18 @@
 
 			</div>
 
+<<<<<<< HEAD
 <!-- Photos -->
 <a name="photos_anchor"></a>
 			<div id="fh5co-work-section" ng-show="showThis" >
+=======
+
+
+
+			<!-- Photos -->
+			<a name="photos_anchor"></a>
+			<div id="fh5co-work-section" ng-show="showThis">
+>>>>>>> dev
 
 				<div class="container">
 					<div class="row">
@@ -102,14 +123,15 @@
 							<h3 class="heading-section">Photos</h3>
 						</div>
 						<div class="col-md-12">
-							<div class="row">
-								<img id="returnedPhotos" class="col-md-6" ng-src={{roverdata.photos[0].img_src}} />
-								<img id="returnedPhotos" class="cold-md-6" ng-src={{roverdata.photos[1].img_src}} />		
+							<div class="row col-md-12">
+								<img id="returnedPhotos" class="col-md-6" ng-src={{roverphoto.photos[0].img_src}} />
+								<img id="returnedPhotos" class="cold-md-6" ng-src={{roverphoto.photos[1].img_src}} />
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
 
 
 
@@ -127,9 +149,40 @@
 									<fieldset>
 										<br>
 										<div>
+											<div class="col-md-6">
+												<label for="rover">Rover</label>
+												<select id="rover" ng-model="rover" class="form-control">
+                    								<option>Spirit</option>
+                    								<option>Curiosity</option>
+                    								<option>Oppurtunity</option>
+                								</select>
+											</div>
+
+											<div class="col-md-6">
+												<label for="camera">Camera</label>
+												<select id="camera" ng-model="camera" class="form-control">
+                    								<option>FHAZ</option>
+                    								<option>RHAZ</option>
+                    								<option>MAST</option>
+                    								<option>CHEMCAM</option>
+													<option>MAHLI</option>
+													<option>MARDI</option>
+                    								<option>NAVCAM</option>
+													<option>PANCAM</option>
+													<option>MINITES</option>
+                								</select>
+											</div>
 											<div class="col-md-4">
 												<label for="year">Year</label>
 												<select id="year" ng-model="year" class="form-control">
+													<option>2004</option>
+													<option>2005</option>
+													<option>2006</option>
+													<option>2007</option>
+													<option>2008</option>
+													<option>2009</option>
+													<option>2010</option>
+													<option>2011</option>
                     								<option>2012</option>
                     								<option>2013</option>
                  								    <option>2014</option>
@@ -157,28 +210,7 @@
 											</div>
 											<div class="col-md-4">
 												<label for="day">Day</label>
-												<input id="day" type="text" placeholder="DD" ng-model="day" class="form-control" required>
-											</div>
-
-
-											<div class="col-md-6">
-												<label for="rover">Rover</label>
-												<select id="rover" ng-model="rover" class="form-control">
-                    								<option>Spirit</option>
-                    								<option>Curiosity</option>
-                    								<option>Oppurtunity</option>
-                								</select>
-											</div>
-
-											<div class="col-md-6">
-												<label for="camera">Camera</label>
-												<select id="camera" ng-model="camera" class="form-control">
-                    								<option>FHAZ</option>
-                    								<option>RHAZ</option>
-                    								<option>MAST</option>
-                    								<option>CHEMCAM</option>
-                    								<option>NAVCAM</option>
-                								</select>
+												<input id="day" type="number" placeholder="DD" ng-model="day" class="form-control" required>
 											</div>
 										</div>
 
@@ -191,6 +223,157 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- Rover Availability -->
+
+			<a name="info_anchor"></a>
+			<div id="fh5co-blog-section-blue" class="border-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 animate-box">
+							<h3 class="heading-section">
+								<font color="white">Rover Availability</font>
+							</h3>
+							<p>Each rover has its own set of photos stored in the database.</p>
+
+							<p>Along with querying by date, results can also be filtered by the camera with which it was taken and responses will
+								be limited to 25 photos per call. Each camera has a unique function and perspective, and they are named as follows:</p>
+						</div>
+
+						<div class="col-md-9 col-sm-12">
+							<div class="row">
+								<div class="col-md-12 col-sm-12">
+									<div class="services animate-box">
+
+										<h2 class="table-text">Cameras</h2>
+
+										<table class="table table-bordered table-text">
+											<thead>
+												<tr>
+													<th>Abbreviation</th>
+													<th>Camera</th>
+													<th>Curiousity</th>
+													<th>Oppurtunity</th>
+													<th>Spirit</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>FHAZ</td>
+													<td>Front Hazard Avoidance Camera</td>
+													<td>&#10004;</td>
+													<td>&#10004;</td>
+													<td>&#10004;</td>
+												</tr>
+												<tr>
+													<td>RHAZ</td>
+													<td>Rear Hazard Avoidance Camera</td>
+													<td>&#10004;</td>
+													<td>&#10004;</td>
+													<td>&#10004;</td>
+												</tr>
+												<tr>
+													<td>MAST</td>
+													<td>Mast Camera</td>
+													<td>&#10004;</td>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>CHEMCAM</td>
+													<td>Chemistry and Camera Complex</td>
+													<td>&#10004;</td>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>MAHLI</td>
+													<td>Mars Hand Lens Imager</td>
+													<td>&#10004;</td>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>MARDI</td>
+													<td>Mars Descent Imager</td>
+													<td>&#10004;</td>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>NAVCAM</td>
+													<td>Navigation Camera</td>
+													<td>&#10004;</td>
+													<td>&#10004;</td>
+													<td>&#10004;</td>
+												</tr>
+												<tr>
+													<td>PANCAM</td>
+													<td>Panoramic Camera</td>
+													<td></td>
+													<td>&#10004;</td>
+													<td>&#10004;</td>
+												</tr>
+												<tr>
+													<td>MINITES</td>
+													<td>Minature Thermal Emission Spectrometer</td>
+													<td></td>
+													<td>&#10004;</td>
+													<td>&#10004;</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+						<div class="col-md-offset-3 col-md-9 col-sm-12">
+							<div class="row">
+								<div class="col-md-12 col-sm-12">
+									<div class="services animate-box">
+										<h2 class="table-text">Activity</h2>
+										<table class="table table-bordered table-text">
+											<thead>
+												<tr>
+													<th>Rover</th>
+													<th>Dates Active</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Spirit</td>
+													<td>January of 2004 - May of 2011</td>
+
+												</tr>
+												<tr>
+													<td>Curiousity</td>
+													<td>August of 2012 - Present</td>
+
+												</tr>
+												<tr>
+													<td>Oppurtunity</td>
+													<td>January of 2004 - Present</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
 			<!-- Share -->
 			<a name="share_anchor"></a>
 			<div id="fh5co-blog-section" class="border-bottom">
@@ -238,8 +421,9 @@
 							</div>
 							<div class="col-md-6">
 								<ul class="footer-menu">
-									<li><a href="index.html">Home</a></li>
+									<li><a href="index.html">Home</a></li>					
 									<li><a href="#date_achor">Date Entry</a></li>
+									<li><a href="#info_anchor">Availability</a></li>
 									<li><a href="#share_anchor">Share</a></li>
 								</ul>
 							</div>
@@ -259,6 +443,8 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stars.js -->
+	<script src="js/stars.js"><script>
 	<!-- Superfish -->
 	<script src="js/hoverIntent.js"></script>
 	<script src="js/superfish.js"></script>
@@ -272,5 +458,9 @@
 <!-- Angular App -->
 	<script type="text/javascript" src="js/app.js"></script>
 
+
+
+
 </body>
+
 </html>
