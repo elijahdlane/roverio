@@ -49,7 +49,7 @@ $(function() {
             var randomX = Math.round(-200 + Math.random() * $('div#container').width());
             var randomY = Math.round(-200 + Math.random() * $('div#container').width());
             var speed = .2;
-            var size = 1;
+            var size = 2;
             var radius = 100 + Math.random() * 100;
 
             var circle = new Circle(radius, speed, size, randomX, randomY);
